@@ -1,0 +1,33 @@
+import React, { useState } from 'react';
+
+export default function TableComponent() {
+  const [rows, setRows] = useState([[]]);
+
+  const addRow = () => {
+    setRows([...rows, []]);
+  };
+
+  const addColumn = (rowIndex) => {
+    const newRows = [...rows];
+    newRows[rowIndex].push('');
+    setRows(newRows);
+  };
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <button onClick={addRow}>Add Row</button>
+      <table>
+        {rows.map((row, rowIndex) => (
+          <tr key={rowIndex}>
+            {row.map((column, columnIndex) => (
+              <td key={columnIndex}>Column</td>
+            ))}
+            <td>
+              <button onClick={() => addColumn(rowIndex)}>Add Column</button>
+            </td>
+          </tr>
+        ))}
+      </table>
+    </main>
+  );
+}
