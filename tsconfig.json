@@ -18,7 +18,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@bistecAudutMangment-app/config": ["./src/config/index.ts"],
+      "@bistecAudutMangment-app/pages": ["./src/Pages/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
